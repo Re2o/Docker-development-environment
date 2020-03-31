@@ -1,0 +1,24 @@
+version: '3'
+
+volumes:
+    database_data:
+        driver: local
+
+services:
+  re2o:
+      build: .
+      ports:
+          - "8080:80"
+      volumes:
+          - .:/var/www/re2o
+  db:
+      image: postgres:latest
+      expose:
+          - 3306
+      volumes:
+          - database_data:/var/lib/postgresql/data
+      environment:
+          POSTGRES_PASSWORD: plopiplop
+          POSTGRES_DB: re2o
+          POSTGRES_USER: re2o
+          MYSQL_PASSWORD: plopiplop
