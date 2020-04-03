@@ -48,4 +48,5 @@ RUN a2ensite re2o
 
 # HERE WE GO
 FROM re2o_apache as re2o
-CMD service apache2 stop && python3 manage.py migrate && python3 manage.py collectstatic --noinput && python3 manage.py compilemessages && service apache2 start && sleep infinity
+COPY ./re2o-dev.sh /var/www/re2o/
+CMD bash re2o-dev.sh

@@ -5,7 +5,7 @@ This is simply a docker environment to dev re2o locally.
 To use it :
 
 * clone Re2o;
-* copy `Dockerfile` and `docker-compose.yml` into the cloned directory;
+* copy `Dockerfile`, `re2o-dev.sh` and `docker-compose.yml` into the cloned directory;
 * copy `settings_local.py` into the `re2o` folder in the cloned directory;
 * run `docker-compose up`
 
